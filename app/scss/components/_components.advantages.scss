@@ -1,0 +1,150 @@
+/*
+    advantages style
+ */
+
+.advantages {
+  padding: 121px 0 63px;
+
+  &__content {
+
+    &-top {
+      box-sizing: border-box;
+      padding-left: 41%;
+      position: relative;
+
+      h3 {
+
+      }
+
+      p {
+        color: #555;
+        margin: 33px auto 30px;
+      }
+
+      ul {
+        margin-left: 87px;
+
+        li {
+          margin-bottom: 20px;
+          box-sizing: border-box;
+          padding-left: 12px;
+          position: relative;
+
+          p {
+            margin: 0 auto;
+          }
+
+          &:before {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: #c73e55;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      figure {
+        position: relative;
+        position: absolute;
+        top: -67px;
+        left: -36px;
+
+        img {
+          position: relative;
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          width: 403px;
+          height: 420px;
+          background: url("../img/advantages/vector.png") no-repeat center/cover;
+          position: absolute;
+          top: 122px;
+          left: -197px;
+        }
+      }
+    }
+
+    &-video {
+      max-width: 564px;
+      margin: 66px auto 259px;
+      position: relative;
+      padding-bottom: 25.3%;
+      filter: drop-shadow(0px 0px 10px rgba(102, 17, 22, 0.5));
+      cursor: pointer;
+      z-index: 11;
+
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        box-shadow: 0 0 10px rgba(102, 17, 22, 0.5);
+      }
+
+      .video-play {
+        width: 61px;
+        height: 60px;
+        background: url("../img/advantages/video-play.png") no-repeat center/cover;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(102, 17, 22, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 12;
+        pointer-events: none;
+      }
+    }
+
+    &-bottom {
+      box-sizing: border-box;
+      padding-left: 31px;
+      position: relative;
+
+      figure {
+        position: relative;
+        position: absolute;
+        bottom: -42px;
+        right: -39px;
+
+        &:before, &:after {
+          content: "";
+          display: block;
+          position: absolute;
+        }
+
+        &:before {
+          width: 403px;
+          height: 420px;
+          background: url("../img/advantages/vector.png") no-repeat center/cover;
+          top: -92px;
+          right: -201px;
+          z-index: -1;
+        }
+
+        &:after {
+          width: 141px;
+          height: 140px;
+          background: url("../img/advantages/vector-s.png") no-repeat center/cover;
+          top: 314px;
+          left: -79px;
+        }
+      }
+
+      h3 {
+        max-width: 600px;
+      }
+
+      a.order {
+        margin: 49px 0 0 150px;
+      }
+    }
+  }
+}

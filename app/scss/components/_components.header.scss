@@ -1,0 +1,70 @@
+/*
+    header style
+ */
+
+.header {
+  padding-bottom: 118px;
+  position: relative;
+
+  &__logo {
+
+  }
+
+  &__content {
+    padding-top: 91px;
+    position: relative;
+
+    span.sale {
+
+    }
+
+    >h6 {
+      color: #fff500;
+      text-align: center;
+      text-transform: uppercase;
+      margin: -7px auto 36px;
+    }
+
+    span {
+      display: block;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+      max-width: 700px;
+      margin: 15px auto 62px;
+    }
+
+    .to-order {
+      margin: 0 auto;
+    }
+
+    &-img {
+      position: absolute;
+      bottom: -118px;
+      z-index: -1;
+
+      &.left {
+        left: -99px;
+      }
+
+      &.right {
+        right: -17px;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: calc(100% - 84px);
+    background: url("../img/header/bg.jpg") no-repeat center/cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+}

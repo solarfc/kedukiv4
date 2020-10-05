@@ -1,0 +1,148 @@
+/*
+    general style
+ */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $hr, sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  color: #fff;
+  background: #fff;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+
+  @include mq(xl) {
+    width: 1140px;
+  }
+
+  @include mq(lg) {
+    width: 960px;
+  }
+
+  @include mq(md) {
+    width: 720px;
+  }
+
+  @include mq(s) {
+    width: 94%;
+  }
+
+  @include mq(xs) {
+    width: 90.625%;
+  }
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  user-select: none;
+}
+
+h1, h2, h6 {
+  font-family: $hb, sans-serif;
+}
+
+h1, h2 {
+  font-size: 55px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: $hr, sans-serif;
+  font-size: 36px;
+  color: #190f46;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+span {
+  font-family: $hm, sans-serif;
+  font-size: 30px;
+
+
+  &.sale {
+    font-family: $hb, sans-serif;
+    font-size: 96px;
+    color: #fff500;
+    text-align: center;
+    display: block;
+  }
+}
+
+p {
+
+  &.small {
+    font-size: 18px;
+  }
+}
+
+.to-order {
+  color: #fff;
+  text-align: center;
+  max-width: 350px;
+
+  a {
+    font-family: $hb, sans-serif;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 25px 0 15px;
+    border: 3px solid #fff;
+    background: transparent;
+    transition: all 0.55s ease-in-out;
+
+    &:hover {
+      background: #fff;
+      color: #c73e55;
+    }
+  }
+
+  h6 {
+    text-transform: uppercase;
+    margin-top: 14px;
+  }
+}
+
+a.order {
+  font-family: $hb, sans-serif;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  width: 300px;
+  padding: 21px 0 14px;
+  background: #fa4748;
+  border-radius: 5px;
+  transition: all 0.55s ease-in-out;
+
+  &:hover {
+    background: #190f46;
+  }
+}
