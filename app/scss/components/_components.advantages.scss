@@ -5,24 +5,48 @@
 .advantages {
   padding: 121px 0 63px;
 
+  @include mq(lg) {
+    padding-top: 41px;
+  }
+
+  @include mq(md) {
+    padding-bottom: 31px;
+  }
+
   &__content {
+    position: relative;
 
     &-top {
       box-sizing: border-box;
       padding-left: 41%;
       position: relative;
 
+      @include mq(xl) {
+        padding-left: 45%;
+      }
+
+      @include mq(lg) {
+        padding-left: 42%;
+      }
+
+      @include mq(md) {
+        padding-left: 0;
+      }
+
       h3 {
 
       }
 
       p {
-        color: #555;
         margin: 33px auto 30px;
       }
 
       ul {
         margin-left: 87px;
+
+        @include mq(lg) {
+          margin-left: 35px;
+        }
 
         li {
           margin-bottom: 20px;
@@ -58,19 +82,56 @@
         top: -67px;
         left: -36px;
 
+        @include mq(xl) {
+          left: 0;
+        }
+
+        @include mq(lg) {
+          width: 380px;
+          top: 0;
+        }
+
+        @include mq(md) {
+          position: relative;
+          margin: 35px 0 0 auto;
+        }
+
         img {
+          width: 100%;
           position: relative;
         }
 
-        &:before {
+        &:before, &:after {
           content: "";
           display: block;
+          position: absolute;
+        }
+
+        &:before {
           width: 403px;
           height: 420px;
           background: url("../img/advantages/vector.png") no-repeat center/cover;
-          position: absolute;
           top: 122px;
           left: -197px;
+        }
+
+        &:after {
+          width: 147px;
+          height: 119px;
+          background: url("../img/advantages/decor/2.png") no-repeat center/cover;
+          top: 219px;
+          left: calc(100% + 659px);
+
+          @include mq(lg) {
+            width: 72px;
+            height: 58px;
+            left: calc(100% + 497px);
+          }
+
+          @include mq(md) {
+            top: -10px;
+            left: -74px;
+          }
         }
       }
     }
@@ -86,6 +147,15 @@
 
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         box-shadow: 0 0 10px rgba(102, 17, 22, 0.5);
+      }
+
+      @include mq(lg) {
+        padding-bottom: 31%;
+      }
+
+      @include mq(md) {
+        margin: -8% auto -5%;
+        padding-bottom: 42%;
       }
 
       .video-play {
@@ -108,11 +178,33 @@
       padding-left: 31px;
       position: relative;
 
+      @include mq(lg) {
+        padding-left: 0;
+      }
+
       figure {
         position: relative;
         position: absolute;
         bottom: -42px;
         right: -39px;
+
+        @include mq(xl) {
+          right: 0;
+        }
+
+        @include mq(lg) {
+          width: 380px;
+        }
+
+        @include mq(md) {
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+
+        img {
+          width: 100%;
+        }
 
         &:before, &:after {
           content: "";
@@ -135,15 +227,81 @@
           background: url("../img/advantages/vector-s.png") no-repeat center/cover;
           top: 314px;
           left: -79px;
+
+          @include mq(lg) {
+            top: 414px;
+          }
         }
       }
 
       h3 {
         max-width: 600px;
+        position: relative;
+
+        @include mq(md) {
+          margin: 97px 0 13px;
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          width: 64px;
+          height: 88px;
+          background: url("../img/advantages/decor/3.png") no-repeat center/cover;
+          position: absolute;
+          top: -137px;
+          left: 430px;
+
+          @include mq(lg) {
+            width: 50px;
+            height: 69px;
+          }
+        }
       }
 
       a.order {
         margin: 49px 0 0 150px;
+
+        @include mq(md) {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &:before {
+      width: 125px;
+      height: 113px;
+      background: url("../img/advantages/decor/1.png") no-repeat center/cover;
+      top: -166px;
+      right: 100%;
+
+      @include mq(lg) {
+        width: 81px;
+        height: 74px;
+        top: -74px;
+        right: 0;
+      }
+    }
+
+    &:after {
+      width: 804px;
+      height: 600px;
+      background: url("../img/advantages/bg.png") no-repeat center/cover;
+      bottom: 128px;
+      left: -360px;
+      z-index: -3;
+
+      @include mq(md) {
+        bottom: 186px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }

@@ -1,0 +1,251 @@
+/*
+    description style
+ */
+
+.description {
+  padding: 122px 0 204px;
+  position: relative;
+
+  @include mq(md) {
+    padding: 44px 0 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(md) {
+      display: block;
+    }
+
+    &-text {
+      width: 50%;
+      position: relative;
+
+      @include mq(md) {
+        width: 100%;
+      }
+
+      p {
+        color: #555;
+
+        &:first-child {
+          margin-bottom: 20px;
+        }
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 72px;
+        background: url("../img/description/decor/1.png") no-repeat center/cover;
+        position: absolute;
+        top: -140px;
+        left: 97%;
+        pointer-events: none;
+
+        @include mq(md) {
+          width: 68px;
+          height: 62px;
+          top: -73px;
+          left: 43px;
+        }
+      }
+    }
+
+    &-img {
+      width: 47%;
+      position: relative;
+      margin-top: 12px;
+
+      @include mq(md) {
+        width: 100%;
+        max-width: 564px;
+        margin: 35px auto 0;
+      }
+
+      img {
+        width: 100%;
+        position: relative;
+        z-index: 9;
+      }
+
+      &:before, &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+      }
+
+      &:before {
+        width: 141px;
+        height: 140px;
+        background: url("../img/description/decor/3.png") no-repeat center/cover;
+        bottom: -86px;
+        left: -51px;
+
+        @include mq(md) {
+          width: 83px;
+          height: 83px;
+          bottom: -33px;
+          left: -20px;
+          z-index: 9;
+        }
+      }
+
+      &:after {
+        width: 403px;
+        height: 420px;
+        background: url("../img/description/decor/2.png") no-repeat center/cover;
+        top: -107px;
+        right: -173px;
+
+        @include mq(md) {
+          width: 199px;
+          height: 208px;
+          top: -56px;
+          right: -90px;
+        }
+      }
+    }
+  }
+
+  &__block {
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 68px;
+
+    @include mq(md) {
+      margin-top: 52px;
+    }
+
+    h3 {
+      margin-left: 79px;
+      max-width: 537px;
+
+      @include mq(lg) {
+        margin-left: 0;
+      }
+    }
+
+    a.order {
+      margin: 57px 0 0 187px;
+
+      @include mq(lg) {
+        margin-left: 0;
+      }
+
+      @include mq(md) {
+        margin: 19px auto 6px;
+      }
+    }
+
+    &-img {
+      position: relative;
+      position: absolute;
+      bottom: -191px;
+      right: -360px;
+
+      @include mq(xl) {
+        right: -160px;
+      }
+
+      @include mq(lg) {
+        width: 550px;
+        right: 0;
+      }
+
+      @include mq(md) {
+        position: relative;
+        top: 0;
+        right: -15px;
+        margin-left: auto;
+      }
+
+      img {
+        width: 100%;
+        position: relative;
+        z-index: 11;
+      }
+
+      &:before, &:after {
+        content: "";
+        display: block;
+        position: absolute;
+      }
+
+      &:before {
+        width: 961px;
+        height: 2px;
+        background: #190f46;
+        bottom: 0;
+        right: 83px;
+
+        @include mq(lg) {
+          width: 118%;
+          right: 10%;
+        }
+      }
+
+      &:after {
+        width: 64px;
+        height: 88px;
+        background: url("../img/description/decor/5.png") no-repeat center/cover;
+        top: 206px;
+        left: 241px;
+        z-index: 12;
+
+        @include mq(md) {
+          width: 64px;
+          height: 76px;
+          background-size: contain;
+          top: 20px;
+          left: -50px;
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: 147px;
+      height: 119px;
+      background: url("../img/description/decor/4.png") no-repeat center/cover;
+      position: absolute;
+      top: -55px;
+      right: calc(100% - 45px);
+
+      @include mq(lg) {
+        top: 5px;
+        right: 0;
+      }
+
+      @include mq(md) {
+        width: 82px;
+        height: 66px;
+        top: -73px;
+        right: 10px;
+      }
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 1920px;
+    height: 576px;
+    background: url("../img/description/bg.png") no-repeat center/cover;
+    position: absolute;
+    bottom: -248px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+
+    @include mq(md) {
+      width: 1000px;
+      height: 300px;
+      bottom: -128px;
+    }
+  }
+}

@@ -6,6 +6,10 @@
   padding-bottom: 118px;
   position: relative;
 
+  @include mq(md) {
+    padding-bottom: 0;
+  }
+
   &__logo {
 
   }
@@ -13,6 +17,10 @@
   &__content {
     padding-top: 91px;
     position: relative;
+
+    @include mq(md) {
+      padding-top: 37px;
+    }
 
     span.sale {
 
@@ -23,6 +31,10 @@
       text-align: center;
       text-transform: uppercase;
       margin: -7px auto 36px;
+
+      @include mq(md) {
+        margin-bottom: 31px;
+      }
     }
 
     span {
@@ -34,10 +46,18 @@
       text-align: center;
       max-width: 700px;
       margin: 15px auto 62px;
+
+      @include mq(md) {
+        margin-bottom: 29px;
+      }
     }
 
     .to-order {
       margin: 0 auto;
+
+      h6 {
+        color: #fff;
+      }
     }
 
     &-img {
@@ -45,8 +65,21 @@
       bottom: -118px;
       z-index: -1;
 
+      @include mq(md) {
+        bottom: 0;
+      }
+
+      img {
+        margin: 0;
+      }
+
       &.left {
         left: -99px;
+
+        @include mq(md) {
+          position: relative;
+          left: -28px;
+        }
       }
 
       &.right {

@@ -1,0 +1,239 @@
+/*
+    information style
+ */
+
+.information {
+  padding: 79px 0 98px;
+
+  @include mq(md) {
+    padding: 86px 0 41px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .review {
+    width: 600px;
+    position: relative;
+
+    @include mq(lg) {
+      width: 500px;
+    }
+
+    @include mq(md) {
+      width: 480px;
+    }
+
+    &__slider {
+      margin-top: 82px;
+
+      @include mq(md) {
+        margin-top: 51px;
+      }
+
+      &-item {
+
+        figure {
+          box-sizing: border-box;
+          padding: 0 76px 0 24px;
+
+          @include mq(md) {
+            padding: 0;
+          }
+
+          p {
+            color: #555;
+            line-height: 20px;
+          }
+
+          h6 {
+            margin-top: 13px;
+          }
+
+          &:first-child {
+            margin-bottom: 73px;
+          }
+        }
+      }
+    }
+
+    &__nav {
+      width: 145px;
+      display: flex;
+      justify-content: space-between;
+      margin: 63px 76px 0 auto;
+
+      .prev-arrow, .next-arrow {
+        width: 15px;
+        height: 27px;
+        background: url("../img/review-arrow.png") no-repeat center/cover;
+        cursor: pointer;
+      }
+
+      .next-arrow {
+        transform: scale(-1, 1);
+      }
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      width: 115px;
+      height: 104px;
+      background: url("../img/information/decor/2.png") no-repeat center/cover;
+      bottom: -79px;
+      left: -91px;
+
+      @include mq(lg) {
+        width: 69px;
+        height: 63px;
+        left: 24px;
+      }
+
+      @include mq(md) {
+        bottom: 50px;
+      }
+    }
+
+    &:after {
+      width: 91px;
+      height: 79px;
+      background: url("../img/information/decor/1.png") no-repeat center/cover;
+      top: -118px;
+      right: 47px;
+      z-index: 15;
+
+      @include mq(md) {
+        width: 36px;
+        height: 52px;
+        background: url("../img/information/decor/3.png") no-repeat center/cover;
+        top: -39px;
+        right: 0;
+      }
+    }
+  }
+
+  .delivery {
+    width: 504px;
+    position: relative;
+
+    @include mq(lg) {
+      width: 434px;
+    }
+
+    @include mq(md) {
+      width: 200px;
+    }
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      figure {
+        width: 202px;
+
+        span {
+          display: block;
+          width: 80px;
+          height: 80px;
+          background: #c73e55;
+          border-radius: 50%;
+          margin-bottom: 13px;
+          position: relative;
+
+          &:after {
+            display: block;
+            font-family: $hb, sans-serif;
+            font-size: 55px;
+            line-height: 1;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        p {
+          color: #555;
+        }
+
+        &:first-child {
+          margin-bottom: 100px;
+
+          @include mq(md) {
+            margin-bottom: 30px;
+          }
+
+          span {
+
+            &:after {
+              content: "1";
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          margin-bottom: 100px;
+
+          @include mq(md) {
+            margin-bottom: 30px;
+          }
+
+          span {
+
+            &:after {
+              content: "2";
+            }
+          }
+        }
+
+        &:nth-child(3) {
+
+          @include mq(md) {
+            margin-bottom: 30px;
+          }
+
+          span {
+
+            &:after {
+              content: "3";
+            }
+          }
+        }
+
+        &:nth-child(4) {
+
+          span {
+
+            &:after {
+              content: "4";
+            }
+          }
+        }
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 69px;
+      height: 99px;
+      background: url("../img/information/decor/3.png") no-repeat center/cover;
+      position: absolute;
+      bottom: -50px;
+      right: 53px;
+
+      @include mq(md) {
+        display: none;
+      }
+    }
+  }
+}

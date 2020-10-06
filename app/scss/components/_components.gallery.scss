@@ -1,0 +1,107 @@
+/*
+    gallery style
+ */
+
+.gallery {
+
+  &__content {
+
+    &-left {
+      width: 61%;
+      max-width: 1165px;
+      display: flex;
+      justify-content: space-between;
+
+      figure {
+
+        &:nth-child(1) {
+          width: 58%;
+          max-width: 657px;
+
+          @include mq(xxl) {
+            width: 57%;
+          }
+
+          a:nth-child(2) {
+            margin: 13px 0;
+
+            @include mq(lg) {
+              margin: 5px 0;
+            }
+          }
+        }
+
+        &:nth-of-type(2) {
+          width: 44%;
+          max-width: 497px;
+
+          @include mq(xxl) {
+            width: 42%;
+          }
+
+          a:nth-child(2) {
+            margin-top: 11px;
+
+            @include mq(xxl) {
+              margin-top: 38px;
+            }
+
+            @include mq(lg) {
+              margin-top: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    &-right {
+      width: 38.5%;
+      max-width: 744px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      a {
+
+        &:nth-child(2) {
+          width: 52%;
+          max-width: 384px;
+          margin: 17px 0;
+
+          @include mq(lg) {
+            margin: 9px 0;
+          }
+        }
+
+        &:nth-child(3) {
+          width: 47%;
+          max-width: 349px;
+          margin: 17px 0;
+
+          @include mq(lg) {
+            margin: 9px 0;
+          }
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: 122px;
+      height: 103px;
+      background: url("../img/gallery/1.png") no-repeat center/cover;
+      position: absolute;
+      top: -77px;
+      left: 10%;
+      z-index: 11;
+      pointer-events: none;
+
+      @include mq(lg) {
+        width: 62px;
+        height: 62px;
+        top: -38px;
+      }
+    }
+  }
+}

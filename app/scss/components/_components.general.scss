@@ -15,7 +15,7 @@ body {
   font-family: $hr, sans-serif;
   font-size: 20px;
   line-height: 1;
-  color: #fff;
+  color: #555;
   background: #fff;
 }
 
@@ -67,6 +67,7 @@ h1, h2, h6 {
 
 h1, h2 {
   font-size: 55px;
+  color: #fff;
   text-transform: uppercase;
 }
 
@@ -78,12 +79,14 @@ h3 {
 
 h6 {
   font-size: 16px;
+  color: #c73e55;
+  text-transform: uppercase;
 }
 
 span {
   font-family: $hm, sans-serif;
   font-size: 30px;
-
+  color: #fff;
 
   &.sale {
     font-family: $hb, sans-serif;
@@ -130,7 +133,7 @@ p {
   }
 }
 
-a.order {
+a.order, .form-group.order button {
   font-family: $hb, sans-serif;
   font-size: 20px;
   color: #fff;
@@ -144,5 +147,67 @@ a.order {
 
   &:hover {
     background: #190f46;
+  }
+}
+
+.gallery, .photo {
+  background: linear-gradient(180deg, #2e227c 0%, #fb4747 100%);
+  padding: 26px 0;
+
+  @include mq(md) {
+    padding: 20px 0;
+  }
+
+  &__content {
+    max-width: 1900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    a {
+      position: relative;
+
+      img {
+        width: 100%;
+        transition: all 0.65s ease-in-out;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        opacity: 0;
+      }
+
+      &:after {
+        width: 80px;
+        height: 80px;
+        background: url("../img/zoom.png") no-repeat center/cover;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.85s ease-in-out;
+      }
+
+      &:hover {
+
+        img {
+          opacity: 0.3;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-left {
+
+    }
+
+    &-right {
+
+    }
   }
 }

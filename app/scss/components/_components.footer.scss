@@ -1,0 +1,77 @@
+/*
+    footer style
+ */
+
+.footer {
+  background: url("../img/footer/bg.jpg") no-repeat center/cover;
+  padding: 132px 0 18px;
+
+  @include mq(md) {
+    padding: 45px 0 10px;
+  }
+
+  &__content {
+    position: relative;
+
+    h2 {
+      max-width: 555px;
+    }
+
+    span {
+      display: block;
+      max-width: 555px;
+      margin: 21px 0 22px;
+
+      &.sale {
+        margin: 0;
+        text-align: left;
+      }
+    }
+
+    >h6 {
+      color: #fff500;
+      margin: -4px auto 31px;
+    }
+
+    .to-order {
+
+      a {
+
+      }
+
+      h6 {
+        color: #fff;
+      }
+    }
+
+    &-img {
+      position: absolute;
+      bottom: -18px;
+      right: 26px;
+
+      @include mq(lg) {
+        width: 400px;
+        right: 0;
+      }
+
+      @include mq(md) {
+        width: 250px;
+        bottom: -10px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    p {
+      color: #fff;
+      margin-top: 55px;
+
+      a {
+        display: inline-block;
+        color: inherit;
+      }
+    }
+  }
+}
