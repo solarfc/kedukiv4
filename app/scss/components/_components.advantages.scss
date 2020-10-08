@@ -48,6 +48,10 @@
           margin-left: 35px;
         }
 
+        @include mq(xs) {
+          margin-left: 10px;
+        }
+
         li {
           margin-bottom: 20px;
           box-sizing: border-box;
@@ -96,6 +100,15 @@
           margin: 35px 0 0 auto;
         }
 
+        @include mq(s) {
+          width: 65%;
+          min-width: 219px;
+        }
+
+        @include mq(xs) {
+          width: 75%;
+        }
+
         img {
           width: 100%;
           position: relative;
@@ -113,6 +126,13 @@
           background: url("../img/advantages/vector.png") no-repeat center/cover;
           top: 122px;
           left: -197px;
+
+          @include mq(s) {
+            width: 175px;
+            height: 183px;
+            top: 20%;
+            left: -39%;
+          }
         }
 
         &:after {
@@ -158,6 +178,17 @@
         padding-bottom: 42%;
       }
 
+      @include mq(s) {
+        max-width: 540px;
+        height: 290px;
+        padding-bottom: 0;
+      }
+
+      @include mq(xs) {
+        height: auto;
+        padding-bottom: 54%;
+      }
+
       .video-play {
         width: 61px;
         height: 60px;
@@ -170,6 +201,11 @@
         transform: translate(-50%, -50%);
         z-index: 12;
         pointer-events: none;
+
+        @include mq(xs) {
+          width: 40px;
+          height: 39px;
+        }
       }
     }
 
@@ -202,6 +238,15 @@
           left: 0;
         }
 
+        @include mq(s) {
+          width: 64%;
+        }
+
+        @include mq(xs) {
+          width: 72%;
+          min-width: 210px;
+        }
+
         img {
           width: 100%;
         }
@@ -219,6 +264,13 @@
           top: -92px;
           right: -201px;
           z-index: -1;
+
+          @include mq(s) {
+            width: 158px;
+            height: 165px;
+            top: 15%;
+            right: -41%;
+          }
         }
 
         &:after {
@@ -230,6 +282,13 @@
 
           @include mq(lg) {
             top: 414px;
+          }
+
+          @include mq(s) {
+            width: 98px;
+            height: 97px;
+            top: calc(100% - 67px);
+            left: calc(100% - 47px);
           }
         }
       }
@@ -255,6 +314,11 @@
           @include mq(lg) {
             width: 50px;
             height: 69px;
+          }
+
+          @include mq(s) {
+            top: -110px;
+            left: 0;
           }
         }
       }
@@ -288,6 +352,10 @@
         top: -74px;
         right: 0;
       }
+
+      @include mq(xs) {
+        top: -54px;
+      }
     }
 
     &:after {
@@ -302,6 +370,16 @@
         bottom: 186px;
         left: 50%;
         transform: translateX(-50%);
+      }
+
+      @include mq(s) {
+        width: 111%;
+        height: 20%;
+        bottom: 150px;
+      }
+
+      @include mq(xs) {
+        height: 12.2%;
       }
     }
   }

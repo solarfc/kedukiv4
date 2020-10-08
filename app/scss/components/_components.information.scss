@@ -12,6 +12,10 @@
   .container {
     display: flex;
     justify-content: space-between;
+
+    @include mq(s) {
+      display: block;
+    }
   }
 
   .review {
@@ -24,6 +28,10 @@
 
     @include mq(md) {
       width: 480px;
+    }
+
+    @include mq(s) {
+      width: 100%;
     }
 
     &__slider {
@@ -54,6 +62,10 @@
 
           &:first-child {
             margin-bottom: 73px;
+
+            @include mq(s) {
+              margin-bottom: 46px;
+            }
           }
         }
       }
@@ -64,6 +76,10 @@
       display: flex;
       justify-content: space-between;
       margin: 63px 76px 0 auto;
+
+      @include mq(s) {
+        margin: 29px 0 0 auto;
+      }
 
       .prev-arrow, .next-arrow {
         width: 15px;
@@ -99,6 +115,10 @@
       @include mq(md) {
         bottom: 50px;
       }
+
+      @include mq(s) {
+        bottom: -29px;
+      }
     }
 
     &:after {
@@ -116,6 +136,10 @@
         top: -39px;
         right: 0;
       }
+
+      @include mq(xs) {
+        top: -49px;
+      }
     }
   }
 
@@ -131,13 +155,26 @@
       width: 200px;
     }
 
+    @include mq(s) {
+      width: 100%;
+      max-width: 504px;
+      margin: 53px auto 0;
+    }
+
     &__content {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
 
       figure {
-        width: 202px;
+        width: 206px;
+
+        @include mq(xs) {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
 
         span {
           display: block;
@@ -163,6 +200,10 @@
 
         p {
           color: #555;
+
+          @include mq(xs) {
+            width: calc(100% - 98px);
+          }
         }
 
         &:first-child {

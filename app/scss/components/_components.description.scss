@@ -65,6 +65,10 @@
         margin: 35px auto 0;
       }
 
+      @include mq(xs) {
+        margin-top: 55px;
+      }
+
       img {
         width: 100%;
         position: relative;
@@ -163,6 +167,11 @@
         margin-left: auto;
       }
 
+      @include mq(s) {
+        width: 84%;
+        min-width: 245px;
+      }
+
       img {
         width: 100%;
         position: relative;
@@ -226,6 +235,10 @@
         height: 66px;
         top: -73px;
         right: 10px;
+      }
+
+      @include mq(s) {
+        z-index: 15;
       }
     }
   }

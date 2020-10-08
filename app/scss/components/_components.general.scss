@@ -17,6 +17,10 @@ body {
   line-height: 1;
   color: #555;
   background: #fff;
+
+  @include mq(xs) {
+    font-size: 18px;
+  }
 }
 
 .container {
@@ -40,7 +44,8 @@ body {
   }
 
   @include mq(xs) {
-    width: 90.625%;
+    width: 90%;
+    min-width: 290px;
   }
 }
 
@@ -69,12 +74,28 @@ h1, h2 {
   font-size: 55px;
   color: #fff;
   text-transform: uppercase;
+
+  @include mq(s) {
+    font-size: 48px;
+  }
+
+  @include mq(xs) {
+    font-size: 36px;
+  }
 }
 
 h3 {
   font-family: $hr, sans-serif;
   font-size: 36px;
   color: #190f46;
+
+  @include mq(s) {
+    font-size: 30px;
+  }
+
+  @include mq(xs) {
+    font-size: 24px;
+  }
 }
 
 h6 {
@@ -88,16 +109,37 @@ span {
   font-size: 30px;
   color: #fff;
 
+  @include mq(s) {
+    font-family: $hr, sans-serif;
+    font-size: 25px;
+  }
+
+  @include mq(xs) {
+    font-size: 20px;
+  }
+
   &.sale {
     font-family: $hb, sans-serif;
     font-size: 96px;
     color: #fff500;
     text-align: center;
     display: block;
+
+    @include mq(s) {
+      font-size: 75px;
+    }
+
+    @include mq(xs) {
+      font-size: 55px;
+    }
   }
 }
 
 p {
+
+  @include mq(xs) {
+    line-height: 20px;
+  }
 
   &.small {
     font-size: 18px;
@@ -130,6 +172,10 @@ p {
   h6 {
     text-transform: uppercase;
     margin-top: 14px;
+
+    @include mq(xs) {
+      font-size: 15px;
+    }
   }
 }
 
@@ -159,55 +205,85 @@ a.order, .form-group.order button {
   }
 
   &__content {
-    max-width: 1900px;
+    width: 100%;
+    max-width: 1920px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     position: relative;
 
-    a {
-      position: relative;
+    @include mq(s) {
+      display: block;
+    }
+  }
+}
+
+.gallery__content, .photo__content, .catalog__block-img {
+
+  a {
+    position: relative;
+
+    img {
+      transition: all 0.5s ease-in-out;
+
+      @include mq(xxl) {
+        width: 100%;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 80px;
+      background: url("../img/zoom.png") no-repeat center/cover;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.85s ease-in-out;
+    }
+
+    &:hover {
 
       img {
-        width: 100%;
-        transition: all 0.65s ease-in-out;
-      }
+        opacity: .3;
 
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        opacity: 0;
-      }
-
-      &:after {
-        width: 80px;
-        height: 80px;
-        background: url("../img/zoom.png") no-repeat center/cover;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: all 0.85s ease-in-out;
-      }
-
-      &:hover {
-
-        img {
-          opacity: 0.3;
-        }
-
-        &:after {
+        @include mq(md) {
           opacity: 1;
         }
       }
-    }
 
-    &-left {
+      &:after {
+        opacity: 1;
 
-    }
-
-    &-right {
-
+        @include mq(md) {
+          display: none;
+        }
+      }
     }
   }
+}
+
+.fade {
+  opacity: 0;
+  transition: all 0.55s ease-in-out;
+
+  &.animated {
+    opacity: 1;
+  }
+}
+
+.body-filter {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: -5;
 }
