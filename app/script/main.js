@@ -2,7 +2,12 @@ let myWidth = window.innerWidth,
     myHeight = window.innerHeight;
 console.log(`width ${myWidth} \n height ${myHeight}`);
 
+document.querySelector('html').style.overflowY = 'hidden';
+
 window.onload = function () {
+
+    document.querySelector('.loader').style.display = 'none';
+    document.querySelector('html').style.overflowY = 'scroll';
 
     /*
         increase date
@@ -62,7 +67,6 @@ window.onload = function () {
         bodyFilter.style.zIndex = '999';
         htmlBody.style.overflowY = 'hidden';
         sizeChart.style.transform = 'translate(-50%, -50%) rotateX(0deg)';
-        sizeChart.style.zIndex = '9999';
     };
 
     const hide = () => {
@@ -70,7 +74,6 @@ window.onload = function () {
         bodyFilter.style.zIndex = '-5';
         htmlBody.style.overflowY = 'scroll';
         sizeChart.style.transform = 'translate(-50%, -50%) rotateX(-90deg)';
-        sizeChart.style.zIndex = '-5';
     };
 
     for(let i = 0; i < activeSizeChart.length; i++) {
@@ -196,8 +199,33 @@ window.onload = function () {
         slow scroll
      */
 
+    if(window.screen.width < 980) {
+        let href = $('#mobile-order').offset().top - innerHeight;
+
+        $('.to-order a, a.order, a.bucket').on('click', function () {
+            $('html, body').animate({scrollTop: href}, 800);
+            return false;
+        });
+
+        window.addEventListener('scroll', function () {
+            hideBucket();
+        });
+
+        window.addEventListener('resize', function () {
+            hideBucket();
+        });
+
+    } else {
+        let href = $('#catalog').offset().top;
+
+        $('.to-order a, a.order, a.bucket').on('click', function () {
+            $('html, body').animate({scrollTop: href}, 800);
+            return false;
+        });
+    }
+
     if(/iPhone|iPod|iPad|Android/i.test(navigator.userAgent)){
-        let href = $('#mobile-order').offset().top - innerHeight - 30;
+        let href = $('#mobile-order').offset().top - innerHeight;
 
         $('.to-order a, a.order, a.bucket').on('click', function () {
             $('html, body').animate({scrollTop: href}, 800);

@@ -33,10 +33,6 @@
         padding-left: 0;
       }
 
-      h3 {
-
-      }
-
       p {
         margin: 33px auto 30px;
       }
@@ -200,11 +196,19 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 12;
+        transition: all 0.65s ease-in-out;
         pointer-events: none;
 
         @include mq(xs) {
           width: 40px;
           height: 39px;
+        }
+      }
+
+      &:hover {
+
+        .video-play {
+          transform: translate(-50%, -50%) scale(1.25);
         }
       }
     }

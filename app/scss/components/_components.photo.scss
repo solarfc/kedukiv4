@@ -59,6 +59,11 @@
           width: 43%;
           max-width: 497px;
 
+          @include mq(xs) {
+            width: 42%;
+            min-width: 136px;
+          }
+
           a {
 
             &:nth-child(1) {
@@ -67,6 +72,10 @@
               @include mq(xxl) {
                 margin-bottom: 16px;
               }
+
+              @include mq(xs) {
+                margin-bottom: 6px;
+              }
             }
           }
         }
@@ -74,6 +83,11 @@
         &:nth-child(2) {
           width: calc(57%  - 12px);
           max-width: 657px;
+
+          @include mq(xs) {
+            width: 56%;
+            min-width: 181px;
+          }
 
           a {
 
@@ -87,89 +101,14 @@
               @include mq(xl) {
                 margin: 21px 0;
               }
+
+              @include mq(xs) {
+                margin: 4px 0;
+              }
             }
           }
         }
       }
     }
-
-    //&-left {
-    //  width: 38%;
-    //  max-width: 744px;
-    //  display: flex;
-    //  flex-wrap: wrap;
-    //  justify-content: space-between;
-    //
-    //  a {
-    //
-    //    &:first-child {
-    //      width: 100%;
-    //      margin-bottom: 40px;
-    //
-    //      @include mq(lg) {
-    //        margin-bottom: 22px;
-    //      }
-    //    }
-    //
-    //    &:nth-child(2) {
-    //      width: 52%;
-    //      max-width: 384px;
-    //    }
-    //
-    //    &:nth-child(3) {
-    //      width: 47%;
-    //      max-width: 349px;
-    //    }
-    //  }
-    //}
-    //
-    //&-right {
-    //  width: 61%;
-    //  max-width: 1166px;
-    //  display: flex;
-    //  justify-content: space-between;
-    //
-    //  figure {
-    //
-    //    &:first-child {
-    //      width: 43%;
-    //      max-width: 497px;
-    //
-    //      @include mq(xxl) {
-    //        width: 42%;
-    //      }
-    //
-    //      a:first-child {
-    //        margin-bottom: 5px;
-    //
-    //        @include mq(xxl) {
-    //          margin-bottom: 32px;
-    //        }
-    //
-    //        @include mq(lg) {
-    //          margin-bottom: 18px;
-    //        }
-    //      }
-    //    }
-    //
-    //    &:last-child {
-    //      width: 57%;
-    //      max-width: 657px;
-    //
-    //      @include mq(xxl) {
-    //
-    //      }
-    //
-    //      a:nth-child(2) {
-    //        margin: 10px 0;
-    //
-    //        @include mq(lg) {
-    //          margin: 5px 0;
-    //        }
-    //      }
-    //    }
-    //  }
-    //}
-
   }
 }

@@ -3,11 +3,15 @@
 var myWidth = window.innerWidth,
     myHeight = window.innerHeight;
 console.log("width ".concat(myWidth, " \n height ").concat(myHeight));
+document.querySelector('html').style.overflowY = 'hidden';
 
 window.onload = function () {
+  document.querySelector('.loader').style.display = 'none';
+  document.querySelector('html').style.overflowY = 'scroll';
   /*
       increase date
    */
+
   var today = new Date(),
       tomorrow = new Date(),
       day,
@@ -56,7 +60,6 @@ window.onload = function () {
     bodyFilter.style.zIndex = '999';
     htmlBody.style.overflowY = 'hidden';
     sizeChart.style.transform = 'translate(-50%, -50%) rotateX(0deg)';
-    sizeChart.style.zIndex = '9999';
   };
 
   var hide = function hide() {
@@ -64,7 +67,6 @@ window.onload = function () {
     bodyFilter.style.zIndex = '-5';
     htmlBody.style.overflowY = 'scroll';
     sizeChart.style.transform = 'translate(-50%, -50%) rotateX(-90deg)';
-    sizeChart.style.zIndex = '-5';
   };
 
   for (var _i2 = 0; _i2 < activeSizeChart.length; _i2++) {
@@ -170,8 +172,8 @@ window.onload = function () {
    */
 
 
-  if (/iPhone|iPod|iPad|Android/i.test(navigator.userAgent)) {
-    var href = $('#mobile-order').offset().top - innerHeight - 30;
+  if (window.screen.width < 980) {
+    var href = $('#mobile-order').offset().top - innerHeight;
     $('.to-order a, a.order, a.bucket').on('click', function () {
       $('html, body').animate({
         scrollTop: href
@@ -189,6 +191,31 @@ window.onload = function () {
     $('.to-order a, a.order, a.bucket').on('click', function () {
       $('html, body').animate({
         scrollTop: _href
+      }, 800);
+      return false;
+    });
+  }
+
+  if (/iPhone|iPod|iPad|Android/i.test(navigator.userAgent)) {
+    var _href2 = $('#mobile-order').offset().top - innerHeight;
+
+    $('.to-order a, a.order, a.bucket').on('click', function () {
+      $('html, body').animate({
+        scrollTop: _href2
+      }, 800);
+      return false;
+    });
+    window.addEventListener('scroll', function () {
+      hideBucket();
+    });
+    window.addEventListener('resize', function () {
+      hideBucket();
+    });
+  } else {
+    var _href3 = $('#catalog').offset().top;
+    $('.to-order a, a.order, a.bucket').on('click', function () {
+      $('html, body').animate({
+        scrollTop: _href3
       }, 800);
       return false;
     });
